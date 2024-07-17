@@ -1,0 +1,22 @@
+<ul class="menu-inner py-1 ps ps--active-y">
+  <li class="menu-item">
+      <a href="/"  class="menu-link">
+        <i class="menu-icon tf-icons bx bx-home"></i>
+        <div data-i18n="Home">Home</div>
+      </a>
+    </li>
+    
+    <li class="menu-item">
+      <a href="{{ url_for('user.settings') }}"  class="menu-link">
+        <i class="menu-icon tf-icons bx bx-cog"></i>
+        <div data-i18n="Account Setting">Account Setting</div>
+      </a>
+    </li>
+    
+    <li class="menu-item">
+      <a href="{{ url_for('user.logout') }}"  class="menu-link">
+        <i class="menu-icon tf-icons bx bx-exit"></i>
+        <div data-i18n="Logout">Logout</div>
+      </a>
+    </li>
+</ul>

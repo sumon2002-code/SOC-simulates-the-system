@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: app
+    environment:
+      REDIS_SERVER_URL: redis://RedisRegister:6379/0
+    ports:
+      - '5000'  # Thay đổi cổng thành 5000:5000 để expose cổng 5000 của ứng dụng ra ngoài
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./logs:/var/log/nginx
+    depends_on:
+      - app
+    ports:
+      - '80:80'
+  RedisRegister:
+    image: redis:6.2-alpine

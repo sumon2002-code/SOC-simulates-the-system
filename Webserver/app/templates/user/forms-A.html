@@ -1,0 +1,10 @@
+{% extends 'user/base.html' %}
+
+{% block menu %}
+{% include 'user/_inc/menu-[login-register].html' %}
+{% endblock %}
+
+{% block content %}
+    {% include 'user/_inc/dynamic_form.html'   %}
+{% endblock %}
+

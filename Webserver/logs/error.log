@@ -1,0 +1,32 @@
+2024/06/21 16:37:58 [emerg] 1#1: host not found in upstream "app1:5000" in /etc/nginx/nginx.conf:22
+2024/06/21 16:38:56 [emerg] 1#1: host not found in upstream "app1:5000" in /etc/nginx/nginx.conf:22
+2024/06/21 16:39:10 [emerg] 1#1: host not found in upstream "app1:5000" in /etc/nginx/nginx.conf:22
+2024/06/21 17:58:52 [emerg] 1#1: "upstream" directive is not allowed here in /etc/nginx/nginx.conf:42
+2024/06/21 17:59:09 [emerg] 1#1: "upstream" directive is not allowed here in /etc/nginx/nginx.conf:42
+2024/06/21 17:59:29 [emerg] 1#1: "upstream" directive is not allowed here in /etc/nginx/nginx.conf:42
+2024/06/21 18:06:35 [emerg] 1#1: "upstream" directive is not allowed here in /etc/nginx/nginx.conf:42
+2024/06/21 18:07:51 [emerg] 1#1: "upstream" directive is not allowed here in /etc/nginx/nginx.conf:42
+2024/06/21 18:08:00 [emerg] 1#1: "upstream" directive is not allowed here in /etc/nginx/nginx.conf:42
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough
+2024/07/14 08:53:57 [alert] 22#22: 1024 worker_connections are not enough

@@ -1,0 +1,182 @@
+{% extends "application/base.html" %}
+
+{% block content %}
+<div class="container-xxl flex-grow-1 container-p-y">
+
+  <!-- Group Table -->
+  <div class="card">
+    <div class="card-header border-bottom">
+      <h5 class="card-title">{{ title }}</h5>
+
+      <div class="col-md-4 user_status">
+        <button class="dt-button add-new btn btn-primary" style="width: 100%;" tabindex="0"
+          aria-controls="DataTables_Table_0" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasAddUser">
+
+          <span>
+            <i class="bx bx-plus me-0 me-sm-1"></i>
+            <span class="d-none d-sm-inline-block">
+              Add New User
+            </span>
+          </span>
+
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Table Groups -->
+  <div class="card-datatable table-responsive">
+    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+
+
+      <!-- Table -->
+      <table class="datatables-users table border-top dataTable no-footer dtr-column" id="DataTables_Table_0"
+        aria-describedby="DataTables_Table_0_info">
+        <thead>
+          <tr>
+
+            <th class="sorting sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+              style="width: 101.516px;" aria-sort="descending" aria-label="User: activate to sort column ascending">
+
+              Title
+            </th>
+
+            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+              style="width: 101.781px;" aria-label="Plan: activate to sort column ascending">
+
+              Color
+            </th>
+
+            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+              style="width: 101.781px;" aria-label="Plan: activate to sort column ascending">
+
+              Description
+            </th>
+
+            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 136.891px;" aria-label="Actions">
+
+              Actions
+            </th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for group in groups %}
+          <tr class="odd" title="Description : {{group.description}}">
+            <td class="  control" tabindex="0" style="display: none;"></td>
+
+            <td>
+              <span class="text-truncate d-flex align-items-center">
+                {{group.title}}
+              </span>
+            </td>
+
+            <td>
+              <span class="badge bg-{{group.color}}">
+                {{colors_dict.get(group.color)}}
+              </span>
+            </td>
+
+            <td>
+              <span class="fw-medium">
+                {{group.description[:26]}}...
+              </span>
+            </td>
+
+            <td>
+              <div class="d-inline-block text-nowrap">
+
+
+                <a href="{{url_for('group.edit', title=group.title)}}">
+                  <button class="btn btn-sm btn-icon">
+                    <i class="bx bx-edit"></i>
+                  </button>
+                </a>
+
+                <a href="{{url_for('group.remove', title=group.title)}}">
+                  <button class="btn btn-sm btn-icon delete-record">
+                    <i class="bx bx-trash"></i>
+                  </button>
+                </a>
+
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <!-- /Table -->
+
+
+
+
+
+      <div class="row mx-2">
+        <div class="col-sm-12 col-md-6">
+          <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
+            Showing {{groups|length}}</div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+            <ul class="pagination">
+              <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#"
+                  aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+              <li class="paginate_button page-item next disabled" id="DataTables_Table_0_next"><a href="#"
+                  aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">Next</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Offcanvas to add new user -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAddUser" aria-labelledby="offcanvasAddUserLabel">
+    <div class="offcanvas-header">
+      <h5 id="offcanvasAddUserLabel" class="offcanvas-title">
+        Add Group
+      </h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body mx-0 flex-grow-0">
+      <form action="{{ url_for('group.add') }}" method="post"
+        class="add-new-user pt-0 fv-plugins-bootstrap5 fv-plugins-framework">
+
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+          {{ form.title.label(class='form-label') }}
+          {{ form.title(class='form-control') }}
+        </div>
+
+
+        <div class="mb-3">
+          <div class="position-relative">
+            {{ form.color.label(class='form-label') }}
+            {{ form.color(class='select2 form-select select2-hidden-accessible') }}
+          </div>
+        </div>
+
+        <div class="mb-3">
+          {{ form.description.label(class='form-label') }}
+          {{ form.description(class='form-control') }}
+        </div>
+
+
+        <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">
+          Submit
+        </button>
+        <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">
+          Cancel
+        </button>
+        <input type="hidden">
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock content %}

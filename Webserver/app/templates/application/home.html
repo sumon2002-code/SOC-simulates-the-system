@@ -1,0 +1,44 @@
+{% extends 'application/base.html' %}
+
+{% block content %}
+<div class="row mb-5">
+    <a class="col-md" href="{{ url_for('event.manage') }}">
+    <div class="col-md">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img class="card-img card-img-left" src="/static/assets/img/icons/event.jpg" alt="Card image">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title h4">Calendar</h5>
+              <p class="card-text" style="color: black;font-size:15px;">
+                Software to manage and use your precious time optimally!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </a>
+    <a class="col-md" href="{{ url_for('task.manage') }}">
+    <div class="col-md">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title h4">To Do</h5>
+              <p class="card-text" style="color: black;font-size:15px;">
+                Software to manage and not forget your work !
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img class="card-img card-img-right" src="/static/assets/img/icons/todo.jpg" alt="Card image">
+          </div>
+        </div>
+      </div>
+    </div>
+    </a>
+  </div>
+{% endblock %}

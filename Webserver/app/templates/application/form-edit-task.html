@@ -1,0 +1,47 @@
+{% extends "application/base.html" %}
+
+{% block content %}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card">
+        <div class="offcanvas-body mx-0 flex-grow-0" style="padding: 10px;">
+            <form action="{{ request.full_path }}" method="post"
+                class="add-new-user pt-0 fv-plugins-bootstrap5 fv-plugins-framework">
+
+                {{ form.hidden_tag() }}
+                <div class="mb-3">
+                    {{ form.title.label(class='form-label') }}
+                    {{ form.title(class='form-control') }}
+                </div>
+
+
+
+                <div class="mb-3">
+                    {{ form.deadline.label(class='form-label') }}
+                    {{ form.deadline(class='form-control') }}
+                </div>
+
+                <div class="mb-3">
+                    <div class="position-relative">
+                        {{ form.group.label(class='form-label') }}
+                        {{ form.group(class='select2 form-select select2-hidden-accessible') }}
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    {{ form.description.label(class='form-label') }}
+                    {{ form.description(class='form-control') }}
+                </div>
+
+
+                <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">
+                    Submit
+                </button>
+                <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">
+                    Cancel
+                </button>
+                <input type="hidden">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
