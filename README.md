@@ -239,3 +239,43 @@ systemctl start kafka
 ![image](https://imgur.com/93NITBH.png "image")
 
 - **Website construction**
+
+    **[Website](https://github.com/sumon2002-code/SOC-simulates-the-system/tree/master/Webserver "Web")**
+
+- **Configure GW Nginx and Log Requests**
+
+![Image](https://imgur.com/PeO5KHc.png "Image")
+![image](https://imgur.com/31DKUpS.png "image")
+
+- **Install filebeat to get nginx's access log and send it to kafka**
+
+```bash
+curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.14.1-amd64.deb
+sudo dpkg -i filebeat-8.14.1-amd64.deb
+```
+- **configure filebeat**
+
+`sudo vim /etc/filebeat/filebeat.yml`
+
+![image](https://imgur.com/GUd2OQV.png "image")
+
+- **Edit output section**
+
+![image](https://imgur.com/IUs3YaG.png "image")
+
+- **Run filebeat**
+
+```bash
+sudo filebeat modules enable nginx
+sudo systemctl enable filebeat
+sudo systemctl start filebeat
+```
+
+- **Check logbeat status**
+
+![image](https://imgur.com/WOtnS0c.png "image")
+
+- **Check graylog to get the log**
+
+![image](https://imgur.com/LwGCHlR.png "image")
+
